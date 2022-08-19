@@ -3,6 +3,7 @@
     <ion-title>
       Mi primera pagina
     </ion-title>
+    <a slot="end" href="segunda">Segunda</a>
   </ion-toolbar>
 </ion-header>
 
@@ -14,20 +15,46 @@
   </ion-header>
 
   <div id="container">
+    <br>
+    <p>Listado de S.O.</p>
+    <ion-list>
+      <ion-radio-group value="biff">
+        <ion-list-header>
+          <ion-label>S.O.</ion-label>
+        </ion-list-header>
+    
+        <ion-item>
+          <ion-label>Windows</ion-label>
+          <ion-radio slot="start" value="biff"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>Linux</ion-label>
+          <ion-radio slot="start" value="griff"></ion-radio>
+        </ion-item>
+    
+        <ion-item>
+          <ion-label>IOS</ion-label>
+          <ion-radio slot="start" value="buford"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+
+
     <ion-button color="danger">Botón</ion-button><br>
     <ion-button color="warning" expand="full">Full Botón</ion-button>
     <ion-button color="success" expand="block">Block Botón</ion-button>
     
     <ion-button size="small">Botón pequeño</ion-button><br>
     <!-- https://ionic.io/ionicons -->
-<ion-button>
-  Right Icon
-  <ion-icon slot="start" name="add-circle-outline"></ion-icon>
-</ion-button>
-<ion-button>
-  Right Icon
-  <ion-icon slot="end" name="star"></ion-icon>
-</ion-button>
+    <ion-button>
+      Right Icon
+      <ion-icon slot="start" name="add-circle-outline"></ion-icon>
+    </ion-button>
+    <ion-button>
+      Right Icon
+      <ion-icon slot="end" name="star"></ion-icon>
+    </ion-button>
     <br>
     
     <ion-button shape="round">Botón 2</ion-button><br>
