@@ -39,8 +39,19 @@
         </ion-item>
       </ion-radio-group>
     </ion-list>
+    
+    <h3>Navegar a otras paginas</h3>
+    <ion-button [routerLink]="['/segunda']" color="success">
+      <ion-icon slot="icon-only" name="pencil-outline"></ion-icon>
+      Votación
+    </ion-button>
 
+    <ion-button [routerLink]="['/registro']" color="danger">
+      <ion-icon slot="icon-only" name="people-outline"></ion-icon>
+      Registro
+    </ion-button>
 
+    <h3>Opciones de botones</h3>
     <ion-button color="danger">Botón</ion-button><br>
     <ion-button color="warning" expand="full">Full Botón</ion-button>
     <ion-button color="success" expand="block">Block Botón</ion-button>
