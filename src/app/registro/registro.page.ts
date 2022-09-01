@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { AlertController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro',
@@ -10,15 +11,34 @@ export class RegistroPage implements OnInit {
   apellido: String;
   correo  : String;
   mensaje : String;
-  constructor() { }
+  constructor(private alertController: AlertController) { }
 
   ngOnInit() {
   }
-  grabar(nom: HTMLInputElement, ape: HTMLInputElement, correo: HTMLInputElement)
+  async grabar(nom: HTMLInputElement, ape: HTMLInputElement, correo: HTMLInputElement)
   {
     if(nom.value == "")
     {
       this.mensaje = "Falta el nombre";
+    }
+    else if(ape.value == "")
+    {
+      this.mensaje = "Falta el apellido";
+    }
+    else if(correo.value == "")
+    {
+      this.mensaje = "Falta el correo";
+    }
+    else
+    {
+      this.mensaje = "";
+      const alert = await this.alertController.create({
+        header    : 'Mensaje de la app',
+        subHeader : 'Datos ingresados',
+        message   : 'Los datos fueron guardados con éxito',
+        buttons   : ['Ok'],
+      });
+      await alert.present();
     }
     // TAREA: validar los demás datos :)
   }

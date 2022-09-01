@@ -7,9 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 // TYPESCRIPT
 export class SegundaPage implements OnInit {
-  apruebo : number;
+  apruebo : number; // String,[], any, bool
   rechazo : number;
-  otro : number;
+  otro    : number;
 
   constructor() {
     this.apruebo = 0;
