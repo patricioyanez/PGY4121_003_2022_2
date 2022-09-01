@@ -6,9 +6,9 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./listado.page.scss'],
 })
 export class ListadoPage implements OnInit {
-  listado : any;
+  personas : any;
   constructor() {
-    this.listado = [
+    this.personas = [
       {
         id    : 1,
         nombre: 'Juan',
