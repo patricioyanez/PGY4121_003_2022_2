@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { AlertController } from '@ionic/angular';
+import { AlertController, ToastController } from '@ionic/angular';
 
 @Component({
   selector: 'app-registro',
@@ -11,7 +11,8 @@ export class RegistroPage implements OnInit {
   apellido: String;
   correo  : String;
   mensaje : String;
-  constructor(private alertController: AlertController) { }
+  constructor(private alertController: AlertController,
+              private toastController: ToastController) { }
 
   ngOnInit() {
   }
@@ -20,6 +21,11 @@ export class RegistroPage implements OnInit {
     if(nom.value == "")
     {
       this.mensaje = "Falta el nombre";
+      const toast = await this.toastController.create({
+        message : "Falta escribir el nombre",
+        duration: 2000
+      })
+      toast.present();
     }
     else if(ape.value == "")
     {
@@ -42,8 +48,10 @@ export class RegistroPage implements OnInit {
     }
     // TAREA: validar los demás datos :)
   }
-  limpiar()
+  limpiar(nom: HTMLInputElement, ape: HTMLInputElement, correo: HTMLInputElement)
   {
-    
+    nom.value = "";
+    ape.value = "";
+    correo.value = "";
   }
 }
