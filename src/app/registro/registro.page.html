@@ -21,6 +21,18 @@
   <div *ngIf="mensaje;">
     <h3 id="Error">Mensaje: {{mensaje}}</h3>
   </div>
+  <ion-fab-button color="secondary">
+    <ion-icon name="add"></ion-icon>
+  </ion-fab-button>
+
+  <ion-fab vertical="bottom" horizontal="center" slot="fixed">
+    <ion-fab-button><ion-icon name="code"></ion-icon></ion-fab-button>
+    <ion-fab-list side="start">
+      <ion-fab-button [routerLink]="['/listado']"><ion-icon name="list-outline"></ion-icon></ion-fab-button>
+      <ion-fab-button [routerLink]="['/home']"><ion-icon name="arrow-back-outline"></ion-icon></ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
+
 </ion-content>
 <ion-footer>
   <ion-toolbar>
