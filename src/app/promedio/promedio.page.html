@@ -27,7 +27,7 @@
 <ion-button (click)="calcular(nota1, nota2, nota3, pond1, pond2, pond3)">
   <ion-icon slot="icon-only" name="calculator-outline"></ion-icon>Promediar
 </ion-button>
-<div *ngIf="resultado;">
+<div *ngIf="promedio;">
   <ion-text color="primary">
     <h1 class="ion-text-center">Su promedio es: {{ promedio | number:'1.0-1' }}</h1>
   </ion-text>
